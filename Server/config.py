@@ -1,0 +1,9 @@
+IP = '172.18.79.118'
+LOG_PORT = 3000
+TEXT_PORT = 3001
+VOICE_PORT = 3002
+FILE_PORT = 3003
+MAX_SESSION = 3
+SEPERATOR = '|'
+AUTHORIZED_USER = {'Alice': 'Alice', 'Bob': 'Bob', 'Frank': 'Frank'}
+BLOCK = 4096
