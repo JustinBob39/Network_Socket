@@ -7,3 +7,4 @@ MAX_SESSION = 3
 SEPERATOR = '|'
 AUTHORIZED_USER = {'Alice': 'Alice', 'Bob': 'Bob', 'Frank': 'Frank'}
 BLOCK = 4096
+FILE_TRANSFER_STOP_SIGN = 'File tranferring stop!'.encode()

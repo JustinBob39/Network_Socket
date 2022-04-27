@@ -1,6 +1,7 @@
 import pyaudio
 
-IP = '192.168.1.103'
+# IP = '192.168.1.103'
+IP = '10.169.105.0'
 LOG_PORT = 4000
 TEXT_PORT = 4001
 VOICE_PORT = 4002
@@ -17,3 +18,4 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
 RECORD_SECONDS = 5
+FILE_TRANSFER_STOP_SIGN = 'File tranferring stop!'.encode()

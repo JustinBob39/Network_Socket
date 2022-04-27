@@ -116,10 +116,14 @@ def file_socket_recv_handler(server: socket.socket) -> None:
             while bytes_recv < file_size:
                 if not file_transfer_willing:
                     print('File transferring stop!')
-                    time.sleep(4)
-                    bytes_read = server.recv(BLOCK * 32)
-                    f.write(bytes_read)
-                    progress.update(len(bytes_read))
+                    while True:
+                        bytes_read = server.recv(BLOCK)
+                        if FILE_TRANSFER_STOP_SIGN in bytes_read:
+                            bytes_read = bytes_read.replace(FILE_TRANSFER_STOP_SIGN, b'')
+                            f.write(bytes_read)
+                            break
+                        f.write(bytes_read)
+                        progress.update(len(bytes_read))
                     progress.close()
                     break
                 if file_size - bytes_recv < BLOCK:

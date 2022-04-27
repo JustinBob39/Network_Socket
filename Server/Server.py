@@ -229,6 +229,7 @@ def file_socket_forward_handler(user: socket.socket, sender: str, file_path: str
                 file_transfer_progress.setdefault(user, [])
                 file_transfer_progress[user].append([sender, file_path, count])
                 print('Save the progress {}'.format(file_transfer_progress))
+                user.send(FILE_TRANSFER_STOP_SIGN)
                 break
             if not bytes_read:
                 file_transfer_done[user] = True
